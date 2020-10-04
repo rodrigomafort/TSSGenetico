@@ -1,0 +1,10 @@
+#!/bin/bash
+while read F C; 
+do
+	mkdir $C
+	cd $C
+	wget $F 
+	unzip -j *.zip
+	gunzip -c $C.txt.gz > $C.txt
+	cd ..
+done < instancias
